@@ -1,0 +1,285 @@
+@import "bourbon/neat";
+
+// Break points
+$desktop-sm: new-breakpoint(max-width 1180px);
+$tablet: new-breakpoint(max-width 880px);
+$mobile: new-breakpoint(max-width 600px);
+$mobile-land: new-breakpoint(max-width 480px);
+
+// Fonts
+$mont: 'Montserrat Alternates', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+$open-sans-condensed: 'Open Sans Condensed', sans-serif;
+
+// Styles
+body {
+	background: #fff;
+	color: #000;
+	font: 24px/40px $open-sans;
+	@include media($tablet) {
+		font: 18px/30px $open-sans;
+	}
+	h1 {
+		text-align: center;
+		text-indent: -100000px;
+		overflow: hidden;
+		background: url('../../img/get-baked.jpg') no-repeat center;
+		background-size: cover;
+		width: 100vw;
+		margin: 0;
+	}
+	#scrollarrow {
+	    position: fixed;
+	    bottom: 0;
+	    width: 100%;
+	    color: #000;
+	    text-align: center;
+	    z-index: 100;
+	    .fa {
+	    	font-size: 8em;
+	    	@include media($tablet) {
+	    		font-size: 5em;
+	    	}
+	    	@include media($mobile) {
+	    		font-size: 5em;
+	    	}
+	    }
+	}
+	.intro-container {
+		@include outer-container;
+		p {
+			@include span-columns(12);
+			text-align: center;
+			padding-right: 2rem;
+			padding-left: 2rem;
+		}
+		.messaging {
+			display: inline-block;
+			margin-bottom: 40px;
+		}		
+	}
+	.main-container {
+		@include outer-container;
+		margin-bottom: 60px;
+	    padding: 30px 0;
+		p {
+			@include span-columns(10);
+			@include shift(1);
+			margin-bottom: 0;
+		    text-align: center;
+		}
+		.products {
+			display: inline-block;
+			margin-bottom: 40px;
+		    padding: 0 20px;
+			.product {
+				display: block;
+				@include span-columns(2);
+				text-decoration: none;
+				margin-bottom: 30px;
+			    margin-right: 2.85765%;
+		        width: 17.70196%;
+		        &:nth-child(5) {
+			        margin-right: 0;
+		        }
+		        &:nth-child(10) {
+			        margin-right: 0;
+		        }
+		        @include media($desktop-sm) {
+			        @include span-columns(3);
+			        &:nth-child(4) {
+				        margin-right: 0;
+			        }	
+			        &:nth-child(5) {
+				        margin-right: 2.35765%;
+				        clear: both;
+			        }
+			        &:nth-child(8) {
+				        margin-right: 0;
+			        }	
+			        &:nth-child(9) {
+				        clear: both;
+			        }
+			        &:nth-child(10) {
+				        margin-right: 2.35765%;
+			        }			        		        
+		        }
+		        @include media($tablet) {
+			        @include span-columns(4);
+			        &:nth-child(3) {
+				        margin-right: 0;
+			        }
+			        &:nth-child(4) {
+				        margin-right: 2.35765%;
+				        clear: both;
+			        }
+			        &:nth-child(5) {
+				        margin-right: 2.35765%;
+				        clear: none;
+			        }
+			        &:nth-child(6) {
+				        margin-right: 0;
+			        }
+			        &:nth-child(8) {
+				        margin-right: 2.35765%;
+			        }	
+			        &:nth-child(9) {
+				        clear: none;
+				        margin-right: 0;
+			        }
+			        &:nth-child(10) {
+				        margin-right: 2.35765%;
+				        clear: both;
+			        }			        		        
+		        }
+		        @include media($mobile) {
+			        @include span-columns(6);
+			        &:nth-child(2) {
+				        margin-right: 0;
+			        }
+			        &:nth-child(3) {
+				        margin-right: 2.35765%;;
+			        }
+			        &:nth-child(4) {
+				        margin-right: 0;
+				        clear: none;
+			        }	
+			        &:nth-child(5) {
+			            margin-right: 2.35765%;
+			        }
+			        &:nth-child(6) {
+			            margin-right: 0;
+			        }
+			        &:nth-child(8) {
+				        margin-right: 0;
+			        }	
+					&:nth-child(9) {
+				        clear: both;
+				        margin-right: 2.35765%;
+			        }	
+			        &:nth-child(10) {
+				        margin-right: 0;
+				        clear: none;
+			        }			        		        
+		        }
+		        @include media($mobile-land) {
+			        @include span-columns(12);
+					margin-right: 2.35765% !important;		        		        
+		        }
+				img {
+					max-width: 100%;
+					border-bottom: 1px solid #7f7f81;
+					padding-bottom: 20px;
+				}
+				h2 {
+					font: 20px/28px $open-sans-condensed;
+					font-weight: 700;
+					color: #5e75bd;
+					text-transform: uppercase;
+					letter-spacing: 3px;
+					margin: 0;
+				}
+				p {
+					font: 16px/20px $mont;
+					color: #000;
+					text-align: left;
+					margin: 5px 0 0 0;
+				}
+			}
+		}
+		.instagram {
+			margin-bottom: 60px;
+		}
+		.social {
+			@include span-columns(10);
+			@include shift(1);	
+			.events {
+				@include span-columns(6);
+				@include media($desktop-sm) {
+					display: none;
+				}
+				@include media($tablet) {
+					display: block;
+					float: none;
+				    margin: 0 0 40px 0;
+					width: 100%;
+					text-align: center;
+				}
+				@include media($mobile) {
+					display: none;
+				}
+				&.small {
+					display: none;
+					@include media($desktop-sm) {
+						display: block;
+						@include span-columns(4);
+					}
+					@include media($tablet) {
+						display: none;
+					}
+					@include media($mobile) {
+						display: block;
+						float: none;
+					    margin: 0 0 40px 0;
+						width: 100%;
+						text-align: center;
+					}
+				}
+			}		
+		}
+		#mc_embed_signup {
+			@include span-columns(5);
+			float: right;
+			@include media($desktop-sm) {
+ 				@include span-columns(7);
+ 				@include shift(1);	
+			}
+			@include media($tablet) {
+				@include span-columns(10);
+			}
+			form {
+				label {
+					display: block;
+					text-transform: uppercase;
+					font-size: 30px;
+					text-align: center;
+					margin-bottom: 20px;
+				}
+				.subscribe-box {
+					background: #999;
+				    padding: 20px;
+				    input {
+					    &.email {
+						    -webkit-appearance: none;
+							border: none;
+							background: #999;
+							display: inline-block;
+						    padding: 5px 20px;
+						    width: 65%;
+							&::-webkit-input-placeholder {
+							   color: #fff;
+							}
+							@include media($mobile) {
+								display: block;
+							    width: 100%;
+							    text-align: center;
+							}
+					    }
+					    &.button {
+					        border: 0;
+						    background: #fff;
+						    padding: 5px 20px;
+						    display: inline-block;
+						    float: right;
+							@include media($mobile) {
+								float: none;
+								margin: 10px auto 0 auto;
+								display: block;
+							}
+					    }
+				    }
+				}
+			}			
+		}
+	}
+}
